@@ -1,0 +1,47 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+console.log("hi");
+var time = 400;
+$('.blurred-box').each(function(i){
+var row = $(this);
+  setTimeout(function() {
+    row.removeClass("opaqueNotInView");
+    row.addClass('bounce-5');
+
+}, time);
+  time += 100;
+
+
+
+    });
+    });
+
+
+    $(".goto").on('click', function(e) {
+e.preventDefault();
+boxCount = $('.blurred-box').length;
+      var time = 200;
+      $('.blurred-box').each(function(i){
+      var row = $(this);
+        setTimeout(function() {
+          row.removeClass("notOpaqueInView");
+          row.addClass('bounce-out');
+          if (i == boxCount - 1) {
+        console.log('bye');
+      	window.location = e.target.href;
+      }
+      }, time);
+        time += 300;
+
+
+
+          });
+
+});
+    </script>
+
+  </body>
+</html>
